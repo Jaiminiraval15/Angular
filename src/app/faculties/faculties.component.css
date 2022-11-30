@@ -1,0 +1,11 @@
+
+.formdesign{
+    height:auto;
+    width:30vw;
+    background-color: paleturquoise;
+    background-image:linear-gradient(skyblue,white);
+    margin:auto;
+    text-align: center;
+    margin-top: 10rem;
+    padding:2rem;
+}

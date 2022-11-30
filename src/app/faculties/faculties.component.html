@@ -1,0 +1,74 @@
+
+<a class="btn btn-primary" routerLink="/students" role="button">Students</a>
+<a class="btn btn-primary" routerLink="/faculties" role="button">Faculties</a>
+<div class="fixed-top">
+  
+          <form [formGroup]="myForm" (ngSubmit)="insert()" *ngIf="formToLoad!=-1" class="formdesign">
+            <table>
+              <tr>
+                <td>ID</td>
+                <td>:</td>
+                <td><input class="m-2" class="m-2" type="text" formControlName="FacultyID" ></td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td>:</td>
+                <td><input class="m-2" class="m-2" type="text" formControlName="FacultyName"></td>
+              </tr>
+              <tr>
+                <td>Designation</td>
+                <td>:</td>
+                <td><input class="m-2" class="m-2" type="text" formControlName="FacultyDesignation"></td>
+              </tr>
+              <tr>
+                <td>EducationQualification</td>
+                <td>:</td>
+                <td><input class="m-2" class="m-2" type="text" formControlName="FacultyEducationQualification"></td>
+              </tr>
+              <tr>
+                <td>Experience</td>
+                <td>:</td>
+                <td><input class="m-2" class="m-2" type="text" formControlName="FacultyExperience"></td>
+              </tr>
+              <tr>
+                <td>WorkingSince</td>
+                <td>:</td>
+                <td><input class="m-2" type="text" formControlName="FacultyWorkingSince"></td>
+              </tr>
+              <tr>
+                <td>Image</td>
+                <td>:</td>
+                <td><input class="m-2" type="text" formControlName="FacultyImage"></td>
+              </tr>
+            </table>
+            <button type="button" class="btn btn-info" (click)="insert()" *ngIf="idToEdit==-1">Add</button>
+            <button type="button" class="btn btn-warning" (click)="cancel()" *ngIf="idToEdit==-1">Cancel</button>
+            <button type="button" class="btn btn-secondary" (click)="insert()" *ngIf="idToEdit!=-1">Edit</button>
+          </form>
+        </div>
+  
+
+<div class="container">
+<div class="row">
+<div *ngFor="let fac of faculties;let i=index" class="card text-bg-light col-3" variant="primary">
+    <img [src]="fac.FacultyImage" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">{{fac.FacultyName}}</h4>
+      <h6 class="card-text">{{fac.FacultyDesignation}}</h6>
+      <p class="card-text">{{fac.FacultyEducationQualification}}</p>
+      <p class="card-text">{{fac.FacultyExperience}}</p>
+      <button type="button" class="btn btn-secondary" (click)="setValueForEdit(i)">Edit</button>
+      <button type="button" class="btn btn-danger m-2" (click)="delete(i)">Delete</button>
+     </div>
+  </div>
+   <div class="card" style="width: 18rem" (click)="formLoaded()">
+      <img src="https://tse4.mm.bing.net/th?id=OIP.5QzEIOaFCt5i4qBNQXkIQQHaHa&pid=Api&P=0" class="card-img-top" alt="...">
+  </div>
+
+  </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,14 @@
+
+
+<a class="btn btn-primary" routerLink="/students" role="button">Students</a>
+<a class="btn btn-primary" routerLink="/faculties" role="button">Faculties</a>
+<div class="row">
+<div *ngFor="let stu of students"class="card col-3" >
+    <img [src]="stu.avatar" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{stu.name}}</h5>
+      <p class="card-text">{{stu.department}}</p>
+     
+    </div>
+  </div>
+</div>
