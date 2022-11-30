@@ -1,1 +1,2 @@
 # Angular
+staticArray crud operations
